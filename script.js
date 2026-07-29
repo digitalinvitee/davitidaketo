@@ -264,53 +264,78 @@
       'rsvpButton'
     );
 
+  let lockedScrollY = 0;
+
+  function lockPageForModal() {
+    lockedScrollY = window.scrollY;
+    document.body.classList.add('is-locked');
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${lockedScrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+  }
+
+  function unlockPageAfterModal() {
+    document.body.classList.remove('is-locked');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    window.scrollTo(0, lockedScrollY);
+  }
+
+  function openModal(modal) {
+    if (!modal || modal.open) return;
+    lockPageForModal();
+    modal.showModal();
+  }
+
+  function closeModal(modal) {
+    if (!modal || !modal.open) return;
+    modal.close();
+  }
+
   if (detailsButton && detailsModal) {
-    detailsButton.addEventListener(
-      'click',
-      () => {
-        detailsModal.showModal();
-      }
-    );
+    detailsButton.addEventListener('click', () => {
+      openModal(detailsModal);
+    });
   }
 
   if (rsvpButton && rsvpModal) {
-    rsvpButton.addEventListener(
-      'click',
-      () => {
-        rsvpModal.showModal();
-      }
-    );
+    rsvpButton.addEventListener('click', () => {
+      openModal(rsvpModal);
+    });
   }
 
   document
     .querySelectorAll('[data-close]')
     .forEach((button) => {
-      button.addEventListener(
-        'click',
-        () => {
-          const modal =
-            document.getElementById(
-              button.dataset.close
-            );
-
-          if (modal) {
-            modal.close();
-          }
-        }
-      );
+      button.addEventListener('click', () => {
+        closeModal(
+          document.getElementById(button.dataset.close)
+        );
+      });
     });
 
   [detailsModal, rsvpModal]
     .filter(Boolean)
     .forEach((modal) => {
-      modal.addEventListener(
-        'click',
-        (event) => {
-          if (event.target === modal) {
-            modal.close();
-          }
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          closeModal(modal);
         }
-      );
+      });
+
+      modal.addEventListener('cancel', (event) => {
+        event.preventDefault();
+        closeModal(modal);
+      });
+
+      modal.addEventListener('close', () => {
+        unlockPageAfterModal();
+      });
     });
 
   const rsvpForm =
