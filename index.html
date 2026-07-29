@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#300309"
+  >
+
+  <title>ქეთო და დავითი — საქორწილო მოსაწვევი</title>
+
+  <meta
+    name="description"
+    content="ქეთოსა და დავითის საქორწილო მოსაწვევი — 2 სექტემბერი, 2026"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=FiraGO:wght@400;500;600&family=Great+Vibes&family=Manrope:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body class="is-locked">
+
+  <div
+    class="ambient-bg"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="ambient-vignette"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="grain"
+    aria-hidden="true"
+  ></div>
+
+  <!-- =========================================
+       OPENING SCREEN
+  ========================================== -->
+
+  <section
+    class="opening"
+    id="opening"
+    aria-label="Invitation opening screen"
+  >
+
+    <div class="opening-shell">
+
+      <article class="letter-panel">
+
+        <!-- LANGUAGE SWITCH -->
+
+        <div
+          class="language-switch language-switch--opening"
+          aria-label="Language switcher"
+        >
+
+          <button
+            type="button"
+            class="language-button is-active"
+            data-language-button="ka"
+          >
+            GEO
+          </button>
+
+          <span>/</span>
+
+          <button
+            type="button"
+            class="language-button"
+            data-language-button="ru"
+          >
+            RU
+          </button>
+
+        </div>
+
+      <!-- OPENING TITLE -->
+
+      <p
+        class="opening-overline"
+        data-ka="თქვენ მოგივიდათ წერილი"
+        data-ru="ВАМ ПРИШЛО ПИСЬМО ОТ"
+      >
+        თქვენ მოგივიდათ წერილი
+      </p>
+
+      <h1 class="opening-title">
+        <span
+          data-ka="დავითი"
+          data-ru="Давити"
+        >
+          დავითი
+        </span>
+
+        <small
+          data-ka="და"
+          data-ru="и"
+        >
+          და
+        </small>
+
+        <span
+          data-ka="ქეთო"
+          data-ru="Кето"
+        >
+          ქეთო
+        </span>
+      </h1>
+
+      <!-- THREE-LAYER ENVELOPE -->
+
+      <button
+        id="openInvitation"
+        class="envelope-stage"
+        type="button"
+        aria-label="მოსაწვევის გახსნა"
+        data-aria-ka="მოსაწვევის გახსნა"
+        data-aria-ru="Открыть приглашение"
+      >
+
+        <span class="envelope-assembly">
+
+          <!-- 1. CLOSED ENVELOPE -->
+
+          <img
+            class="envelope-layer envelope-closed"
+            src="assets/closed-envelope.png"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <!-- 2. OPENED ENVELOPE -->
+
+          <img
+            class="envelope-layer envelope-opened"
+            src="assets/opened-envelope.png"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <!-- 3. FLOWERS THAT RISE FROM INSIDE -->
+
+          <img
+            class="envelope-layer envelope-flowers"
+            src="assets/flowers.png"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <!-- MONOGRAM — VISIBLE ONLY WHEN CLOSED -->
+
+          <span
+            class="envelope-monogram"
+            aria-hidden="true"
+          >
+            D | K
+          </span>
+
+        </span>
+
+      </button>
+
+      <!-- SIDE FLOWER — REMAINS VISIBLE WHILE OPENING -->
+
+      <img
+        class="opening-side-flower"
+        src="assets/white-lily.png"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <p
+        class="tap-copy"
+        data-ka="დააჭირეთ კონვერტს გასახსნელად"
+        data-ru="НАЖМИТЕ НА КОНВЕРТ, ЧТОБЫ ОТКРЫТЬ"
+      >
+        დააჭირეთ კონვერტს გასახსნელად
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+  <!-- =========================================
+       MAIN WEBSITE
+  ========================================== -->
+
+  <main
+    id="site"
+    class="site"
+    aria-hidden="true"
+  >
+
+    <!-- COLLAGE SECTION -->
+
+    <section class="collage panel">
+
+      <div class="marquee">
+
+        <span
+          data-ka="გიწვევთ ჩვენს ქორწილში"
+          data-ru="ПРИГЛАШАЕМ НА СВАДЬБУ"
+        >
+          გიწვევთ ჩვენს ქორწილში
+        </span>
+
+        <span
+          data-ka="გიწვევთ ჩვენს ქორწილში"
+          data-ru="ПРИГЛАШАЕМ НА СВАДЬБУ"
+        >
+          გიწვევთ ჩვენს ქორწილში
+        </span>
+
+      </div>
+
+      <!-- HERO SCENE -->
+
+      <div class="hero-scene">
+
+        <img
+          src="assets/open-envelope.png"
+          class="hero-envelope"
+          alt=""
+        >
+
+        <button
+          class="vinyl-button"
+          id="musicButton"
+          type="button"
+          aria-label="მუსიკის ჩართვა"
+          data-aria-ka="მუსიკის ჩართვა"
+          data-aria-ru="Включить музыку"
+        >
+
+          <img
+            src="assets/vinyl-player.png"
+            alt=""
+          >
+
+          <span id="musicState">
+            PLAY
+          </span>
+
+        </button>
+
+        <audio
+          id="music"
+          loop
+          preload="metadata"
+        >
+
+          <source
+            src="assets/music.mp3"
+            type="audio/mpeg"
+          >
+
+        </audio>
+
+      </div>
+
+      <!-- MAIN INVITATION CARD -->
+
+      <article class="ornate-card reveal">
+
+        <img
+          src="assets/ornate-frame.png"
+          alt=""
+        >
+
+        <div class="ornate-copy invitation-typography">
+
+          <p
+            class="invitation-kicker"
+            data-ka="გიწვევთ<br>ჩვენს ქორწილში"
+            data-ru="ПРИГЛАШАЕМ<br>ВАС НА СВАДЬБУ"
+          >
+            გიწვევთ<br>
+            ჩვენს ქორწილში
+          </p>
+
+          <h2 class="invitation-names">
+
+            <span
+              data-ka="დავითი"
+              data-ru="Давити"
+            >
+              დავითი
+            </span>
+
+            <small
+              data-ka="და"
+              data-ru="и"
+            >
+              და
+            </small>
+
+            <span
+              data-ka="ქეთო"
+              data-ru="Кето"
+            >
+              ქეთო
+            </span>
+
+          </h2>
+
+          <strong
+            class="invitation-date"
+            data-ka="2 სექტემბერი 2026"
+            data-ru="2 СЕНТЯБРЯ 2026"
+          >
+            2 სექტემბერი 2026
+          </strong>
+
+          <span
+            class="invitation-message"
+            data-ka="ბედნიერები ვიქნებით,<br>თუ ამ განსაკუთრებულ დღეს<br>ჩვენთან ერთად გაატარებთ"
+            data-ru="БУДЕМ СЧАСТЛИВЫ<br>РАЗДЕЛИТЬ С ВАМИ<br>ЭТОТ ДЕНЬ!"
+          >
+            ბედნიერები ვიქნებით,<br>
+            თუ ამ განსაკუთრებულ დღეს<br>
+            ჩვენთან ერთად გაატარებთ
+          </span>
+
+        </div>
+
+      </article>
+
+      <!-- FIRST POLAROID -->
+
+      <img
+        src="assets/polaroid-1.png"
+        class="polaroid polaroid--one reveal"
+        alt="Wedding venue"
+      >
+
+      <!-- DETAILS CARD -->
+
+      <article class="flower-note reveal">
+
+        <img
+          src="assets/flower-paper.png"
+          alt=""
+        >
+
+        <div>
+
+          <p
+            class="note-title"
+            data-ka="ქორწილის დეტალები"
+            data-ru="ДЕТАЛИ СВАДЬБЫ"
+          >
+            ქორწილის დეტალები
+          </p>
+
+          <button
+            id="detailsButton"
+            type="button"
+            data-ka="დააჭირეთ აქ"
+            data-ru="НАЖМИТЕ СЮДА"
+          >
+            დააჭირეთ აქ
+          </button>
+
+        </div>
+
+      </article>
+
+      <!-- CHAMPAGNE SCENE -->
+
+      <div class="coupe-scene reveal">
+
+        <img
+          src="assets/champagne-coupe.png"
+          class="coupe"
+          alt=""
+        >
+
+        <img
+          src="assets/polaroid-2.png"
+          class="polaroid polaroid--two"
+          alt="Wedding venue"
+        >
+
+        <img
+          src="assets/floral-cascade.png"
+          class="cascade-two"
+          alt=""
+        >
+
+      </div>
+
+      <!-- RSVP CARD -->
+
+      <article class="rsvp-note reveal">
+
+        <img
+          src="assets/square-paper.png"
+          alt=""
+        >
+
+        <div>
+
+          <p
+            class="note-title"
+            data-ka="სტუმრის ანკეტა"
+            data-ru="АНКЕТА ГОСТЯ"
+          >
+            სტუმრის ანკეტა
+          </p>
+
+          <span
+            class="note-copy"
+            data-ka="გთხოვთ, დაადასტუროთ<br>თქვენი დასწრება<br><u>15.08.2026-მდე</u>"
+            data-ru="ПОЖАЛУЙСТА, ПОДТВЕРДИТЕ<br>СВОЁ ПРИСУТСТВИЕ<br><u>ДО 15.08.2026</u>"
+          >
+            გთხოვთ, დაადასტუროთ<br>
+            თქვენი დასწრება<br>
+            <u>15.08.2026-მდე</u>
+          </span>
+
+          <button
+            id="rsvpButton"
+            type="button"
+            data-ka="შეავსეთ ანკეტა"
+            data-ru="ЗАПОЛНИТЬ АНКЕТУ"
+          >
+            შეავსეთ ანკეტა
+          </button>
+
+        </div>
+
+      </article>
+
+      <img
+        src="assets/wax-seal.png"
+        class="seal reveal"
+        alt=""
+      >
+
+    </section>
+
+    <!-- COUNTDOWN -->
+
+    <section class="countdown-panel panel">
+
+      <p
+        data-ka="ჩვენს შეხვედრამდე დარჩა"
+        data-ru="ДО НАШЕЙ ВСТРЕЧИ ОСТАЛОСЬ"
+      >
+        ჩვენს შეხვედრამდე დარჩა
+      </p>
+
+      <div
+        class="countdown"
+        data-target="2026-09-02T18:00:00+04:00"
+      >
+
+        <div>
+
+          <b id="days">
+            00
+          </b>
+
+          <span
+            data-ka="დღე"
+            data-ru="ДНЕЙ"
+          >
+            დღე
+          </span>
+
+        </div>
+
+        <div>
+
+          <b id="hours">
+            00
+          </b>
+
+          <span
+            data-ka="საათი"
+            data-ru="ЧАСОВ"
+          >
+            საათი
+          </span>
+
+        </div>
+
+        <div>
+
+          <b id="minutes">
+            00
+          </b>
+
+          <span
+            data-ka="წუთი"
+            data-ru="МИНУТ"
+          >
+            წუთი
+          </span>
+
+        </div>
+
+        <div>
+
+          <b id="seconds">
+            00
+          </b>
+
+          <span
+            data-ka="წამი"
+            data-ru="СЕКУНД"
+          >
+            წამი
+          </span>
+
+        </div>
+
+      </div>
+
+      <p
+        class="love"
+        data-ka=" სიყვარულით"
+        data-ru=" С ЛЮБОВЬЮ"
+      >
+         სიყვარულით
+      </p>
+
+      <h3
+        data-ka="დავითი და ქეთო "
+        data-ru="Давити и Кето "
+      >
+        დავითი და ქეთო
+      </h3>
+
+      <div
+        class="credit"
+        data-ka="საიტი შექმნილია INVITÉ-ს მიერ"
+        data-ru="САЙТ РАЗРАБОТАН INVITÉ"
+      >
+        საიტი შექმნილია INVITÉ-ს მიერ
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================================
+       DETAILS MODAL
+  ========================================== -->
+
+  <dialog
+    id="detailsModal"
+    class="modal modal--details"
+  >
+
+    <button
+      class="close"
+      data-close="detailsModal"
+      aria-label="დახურვა"
+    >
+      ×
+    </button>
+
+    <p
+      data-ka="ქორწილის დეტალები"
+      data-ru="ДЕТАЛИ СВАДЬБЫ"
+    >
+      ქორწილის დეტალები
+    </p>
+
+    <h3
+      data-ka="2 სექტემბერი 2026"
+      data-ru="2 сентября 2026"
+    >
+      2 სექტემბერი 2026
+    </h3>
+
+    <div class="event-row">
+
+      <b>18:00</b>
+
+      <span
+        data-ka="სტუმრების შეკრება"
+        data-ru="Сбор гостей"
+      >
+        სტუმრების შეკრება
+      </span>
+
+    </div>
+
+    <div class="event-row">
+
+      <b>18:30</b>
+
+      <span
+        data-ka="საქორწილო ცერემონია"
+        data-ru="Свадебная церемония"
+      >
+        საქორწილო ცერემონია
+      </span>
+
+    </div>
+
+    <div class="event-row">
+
+      <b>19:00</b>
+
+      <span
+        data-ka="სადღესასწაულო ვახშამი"
+        data-ru="Праздничный ужин"
+      >
+        სადღესასწაულო ვახშამი
+      </span>
+
+    </div>
+
+    <div class="venue">
+
+      <p
+        data-ka="რესტორანი „ლისი მერე“"
+        data-ru="Ресторан «Лиси Мере»"
+      >
+        რესტორანი „ლისი მერე“
+      </p>
+
+      <span
+        data-ka="თბილისი, საქართველო"
+        data-ru="Тбилиси, Грузия"
+      >
+        თბილისი, საქართველო
+      </span>
+
+    </div>
+
+    <a
+      href="https://maps.app.goo.gl/ek8ms6CT4Mg4vc7m9?g_st=ic"
+      target="_blank"
+      rel="noopener"
+      data-ka="ლოკაციის გახსნა"
+      data-ru="ОТКРЫТЬ КАРТУ"
+    >
+      ლოკაციის გახსნა
+    </a>
+
+  </dialog>
+
+  <!-- =========================================
+       RSVP MODAL
+  ========================================== -->
+
+  <dialog
+    id="rsvpModal"
+    class="modal modal--rsvp"
+  >
+
+    <button
+      class="close"
+      data-close="rsvpModal"
+      aria-label="დახურვა"
+    >
+      ×
+    </button>
+
+    <p
+      data-ka="სტუმრის ანკეტა"
+      data-ru="АНКЕТА ГОСТЯ"
+    >
+      სტუმრის ანკეტა
+    </p>
+
+    <h3
+      data-ka="შემოგვიერთდებით?"
+      data-ru="Будете ли вы с нами?"
+    >
+      შემოგვიერთდებით?
+    </h3>
+
+    <form id="rsvpForm">
+
+      <label>
+
+        <span
+          data-ka="სახელი და გვარი"
+          data-ru="ИМЯ И ФАМИЛИЯ"
+        >
+          სახელი და გვარი
+        </span>
+
+        <input
+          name="name"
+          required
+          autocomplete="name"
+        >
+
+      </label>
+
+      <fieldset>
+
+        <label>
+
+          <input
+            type="radio"
+            name="attendance"
+            value="yes"
+            required
+          >
+
+          <span
+            data-ka="სიხარულით დავესწრები"
+            data-ru="С радостью приду"
+          >
+            სიხარულით დავესწრები
+          </span>
+
+        </label>
+
+        <label>
+
+          <input
+            type="radio"
+            name="attendance"
+            value="no"
+          >
+
+          <span
+            data-ka="ვერ დავესწრები"
+            data-ru="Не смогу присутствовать"
+          >
+            ვერ დავესწრები
+          </span>
+
+        </label>
+
+      </fieldset>
+
+      <label>
+
+        <span
+          data-ka="შეტყობინება"
+          data-ru="СООБЩЕНИЕ"
+        >
+          შეტყობინება
+        </span>
+
+        <textarea
+          name="message"
+          rows="3"
+        ></textarea>
+
+      </label>
+
+      <button
+        type="submit"
+        data-ka="გაგზავნა"
+        data-ru="ОТПРАВИТЬ"
+      >
+        გაგზავნა
+      </button>
+
+      <p id="formStatus"></p>
+
+    </form>
+
+  </dialog>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
