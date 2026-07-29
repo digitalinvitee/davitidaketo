@@ -2209,3 +2209,51 @@ html[lang="ru"] .invitation-message {
     width: 114px;
   }
 }
+/* =========================================
+   FINAL GEORGIAN FONT FIX
+   Geo Tabidze — მხოლოდ ლათინურად ჩაწერილი სახელები
+   GL Erekles Stamba — ყველა სხვა ქართული ტექსტი
+========================================= */
+
+/* ყველა ჩვეულებრივი ქართული ტექსტი */
+html[lang="ka"] body,
+html[lang="ka"] button,
+html[lang="ka"] input,
+html[lang="ka"] textarea,
+html[lang="ka"] select,
+html[lang="ka"] .opening-overline,
+html[lang="ka"] .tap-copy,
+html[lang="ka"] .opening-kicker,
+html[lang="ka"] .invitation-kicker,
+html[lang="ka"] .invitation-date,
+html[lang="ka"] .invitation-message,
+html[lang="ka"] .note-title,
+html[lang="ka"] .flower-note,
+html[lang="ka"] .flower-note p,
+html[lang="ka"] .flower-note button,
+html[lang="ka"] .rsvp-note,
+html[lang="ka"] .rsvp-note p,
+html[lang="ka"] .rsvp-note span,
+html[lang="ka"] .rsvp-note button,
+html[lang="ka"] .countdown-panel,
+html[lang="ka"] .countdown-panel > p,
+html[lang="ka"] .countdown-panel h3,
+html[lang="ka"] .countdown span,
+html[lang="ka"] .credit,
+html[lang="ka"] .modal,
+html[lang="ka"] .modal h3 {
+  font-family: "GL Erekles Stamba", "FiraGO", Arial, sans-serif !important;
+}
+
+/* მხოლოდ წყვილის სახელები — HTML-ში ლათინური ასოებით */
+html[lang="ka"] .opening-names,
+html[lang="ka"] .opening-title,
+html[lang="ka"] .invitation-names {
+  font-family: "Geo Tabidze", serif !important;
+}
+
+/* „და“ ჩვეულებრივი ქართული ფონტით */
+html[lang="ka"] .opening-title small,
+html[lang="ka"] .invitation-names small {
+  font-family: "GL Erekles Stamba", "FiraGO", Arial, sans-serif !important;
+}
