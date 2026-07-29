@@ -6,6 +6,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Geo Tabidze";
+  src: url("assets/geo_tabidze-12487314067.ttf") format("truetype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family: "GL Erekles Stamba";
+  src: url("assets/gl-erekles-stamba-regular-38755905276.ttf") format("truetype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
 :root {
   --wine: #4b0711;
   --wine-dark: #280207;
@@ -16,8 +32,8 @@
   --serif: "Cormorant Garamond", Georgia, serif;
   --script: "Great Vibes", cursive;
   --ui: "Manrope", Arial, sans-serif;
-  --geo: "FiraGO", Arial, sans-serif;
-  --geo-names: "DM Archium", "FiraGO", serif;
+  --geo: "GL Erekles Stamba", "FiraGO", Arial, sans-serif;
+  --geo-names: "Geo Tabidze", "DM Archium", "FiraGO", serif;
   --tracking-wide: .08em;
   --tracking-soft: .025em;
 }
@@ -2067,7 +2083,7 @@ html[lang="ru"] .invitation-message {
 
 .cascade-two {
   z-index: 50;
-  top: 228px;
+  top: 300px; /* 22px-ით ქვემოთ */
   right: -58px;
   width: 220px;
   pointer-events: none;
