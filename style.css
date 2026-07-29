@@ -521,7 +521,7 @@ html[lang="ka"] .opening-title small {
 .collage {
   min-height: 1880px;
   padding: 0 20px 68px;
-  overflow: hidden;
+  
 }
 
 .marquee {
@@ -713,7 +713,7 @@ html[lang="ka"] .invitation-names {
   font-family: var(--geo-names);
   font-size: 38px;
   line-height: 1;
-  transform: translateY(-18px);
+  transform: translateY(-34px);
 }
 
 html[lang="ka"] .invitation-names small {
@@ -730,13 +730,13 @@ html[lang="ru"] .invitation-message {
 
 .polaroid {
   position: absolute;
-  z-index: 34;
+  z-index: 120;
   filter: drop-shadow(0 18px 18px rgba(0,0,0,.35));
 }
 
 .polaroid--one {
-  top: 1000px;
-  left: 0;
+  top: 920px;      /* 1 სმ-ით ზემოთ */
+  left: -4px;
   width: 142px;
   transform: rotate(-10deg);
 }
@@ -852,6 +852,8 @@ html[lang="ka"] .rsvp-note button {
 }
 
 .polaroid--two {
+  position: absolute;
+  z-index: 34;
   top: 190px;
   right: -6px;
   width: 142px;
@@ -860,10 +862,11 @@ html[lang="ka"] .rsvp-note button {
 
 .cascade-two {
   position: absolute;
-  z-index: 36;
+  z-index: 50; /* პოლაროიდზე ზემოთ */
   top: 228px;
   right: -58px;
   width: 220px;
+  pointer-events: none;
 }
 
 .rsvp-note {
@@ -1733,9 +1736,9 @@ html[lang="ru"] .invitation-kicker {
 html[lang="ru"] .invitation-names {
   gap: 7px;
   max-width: 100%;
-  font-size: clamp(43px, 11vw, 54px);
+  font-size: clamp(43px,11vw,54px);
   line-height: .92;
-  transform: translateY(-10px);
+  transform: translateY(-26px);
 }
 
 html[lang="ru"] .invitation-names small {
@@ -1836,5 +1839,357 @@ html[lang="ru"] .invitation-message {
   .polaroid--one {
     top: 860px;
     width: 116px;
+  }
+}
+
+/* =========================================================
+   FINAL CONSOLIDATED UI SYSTEM
+   Typography, spacing and layer fixes
+========================================================= */
+
+:root {
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 36px;
+  --space-6: 52px;
+}
+
+/* Consistent text rendering */
+body,
+button,
+input,
+textarea,
+select {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent unintended clipping while keeping horizontal overflow controlled */
+.panel,
+.collage,
+.hero-scene,
+.coupe-scene {
+  overflow: visible;
+}
+
+.site {
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+/* Unified invitation card rhythm */
+.ornate-copy {
+  inset: 17.5% 14.5% 15.5%;
+  display: grid;
+  grid-template-rows: auto minmax(24px, .55fr) auto minmax(10px, .2fr) auto;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.invitation-kicker,
+.invitation-names,
+.invitation-date,
+.invitation-message {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  text-align: center;
+  justify-self: center;
+}
+
+.invitation-kicker {
+  margin: 20px 0 8px;
+  font-size: clamp(16px, 4.1vw, 19px);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: .01em;
+}
+
+.invitation-names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin: 0;
+  font-size: clamp(50px, 13.5vw, 60px);
+  font-weight: 400;
+  line-height: .94;
+  white-space: nowrap;
+  transform: translateY(-14px);
+}
+
+.invitation-names span,
+.invitation-names small {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.invitation-names small {
+  margin: 0 2px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.invitation-date {
+  margin: 0;
+  font-size: clamp(14px, 3.8vw, 17px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: .025em;
+}
+
+.invitation-message {
+  max-width: 86%;
+  margin: 4px auto 0;
+  font-size: clamp(12px, 3.35vw, 14px);
+  font-weight: 400;
+  line-height: 1.38;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Georgian typography */
+html[lang="ka"] .invitation-kicker,
+html[lang="ka"] .invitation-date,
+html[lang="ka"] .invitation-message {
+  font-family: var(--geo);
+}
+
+html[lang="ka"] .invitation-names {
+  gap: 7px;
+  font-family: var(--geo-names);
+  font-size: clamp(29px, 8.5vw, 36px);
+  line-height: 1.05;
+  transform: translateY(-28px);
+}
+
+html[lang="ka"] .invitation-names small {
+  margin: 0 1px;
+  font-family: var(--geo);
+  font-size: 15px;
+}
+
+/* Russian typography */
+html[lang="ru"] .ornate-copy {
+  inset: 18% 15% 16%;
+  grid-template-rows: auto minmax(18px, .45fr) auto minmax(8px, .18fr) auto;
+}
+
+html[lang="ru"] .invitation-kicker {
+  max-width: 92%;
+  margin: 16px auto 6px;
+  font-size: clamp(14px, 3.6vw, 17px);
+  line-height: 1.25;
+}
+
+html[lang="ru"] .invitation-names {
+  gap: 6px;
+  font-size: clamp(41px, 10.8vw, 51px);
+  transform: translateY(-20px);
+}
+
+html[lang="ru"] .invitation-names small {
+  margin: 0 1px;
+  font-size: 14px;
+}
+
+html[lang="ru"] .invitation-date {
+  font-size: clamp(13px, 3.5vw, 16px);
+}
+
+html[lang="ru"] .invitation-message {
+  max-width: 88%;
+  font-size: clamp(11px, 3vw, 13px);
+  line-height: 1.34;
+}
+
+/* Consistent note typography and spacing */
+.note-title,
+.flower-note p,
+.rsvp-note p {
+  margin: 0;
+  font-size: clamp(15px, 4vw, 17px);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: .015em;
+}
+
+.flower-note > div {
+  inset: 16% 13% 15%;
+  gap: var(--space-3);
+}
+
+.flower-note button,
+.rsvp-note button {
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: .02em;
+}
+
+.rsvp-note > div {
+  inset: 15% 12% 16%;
+}
+
+.rsvp-note p {
+  margin-bottom: 18px;
+}
+
+.rsvp-note button {
+  margin-top: 22px;
+}
+
+/* First polaroid only: raised, visible, and clear of copy */
+.polaroid {
+  filter: drop-shadow(0 18px 18px rgba(0, 0, 0, .35));
+}
+
+.polaroid--one {
+  z-index: 120;
+  top: 900px;
+  left: -16px;
+  width: 136px;
+  transform: rotate(-10deg);
+}
+
+/* Second polaroid stays lower; floral cascade sits above it */
+.polaroid--two {
+  z-index: 34;
+  top: 190px;
+  right: -6px;
+  width: 142px;
+  transform: rotate(8deg);
+}
+
+.cascade-two {
+  z-index: 50;
+  top: 228px;
+  right: -58px;
+  width: 220px;
+  pointer-events: none;
+}
+
+/* Mobile refinement */
+@media (max-width: 390px) {
+  .ornate-copy {
+    inset: 17.5% 14% 15.5%;
+  }
+
+  .invitation-kicker {
+    margin-top: 16px;
+    font-size: 16px;
+  }
+
+  .invitation-names {
+    gap: 6px;
+    font-size: 48px;
+    transform: translateY(-12px);
+  }
+
+  .invitation-names small {
+    font-size: 15px;
+  }
+
+  .invitation-date {
+    font-size: 15px;
+  }
+
+  .invitation-message {
+    max-width: 88%;
+    font-size: 12px;
+    line-height: 1.36;
+  }
+
+  html[lang="ka"] .invitation-names {
+    gap: 5px;
+    font-size: 30px;
+    transform: translateY(-24px);
+  }
+
+  html[lang="ka"] .invitation-names small {
+    font-size: 13px;
+  }
+
+  html[lang="ru"] .ornate-copy {
+    inset: 18% 14.5% 16%;
+  }
+
+  html[lang="ru"] .invitation-kicker {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+
+  html[lang="ru"] .invitation-names {
+    gap: 4px;
+    font-size: 40px;
+    transform: translateY(-16px);
+  }
+
+  html[lang="ru"] .invitation-names small {
+    font-size: 13px;
+  }
+
+  html[lang="ru"] .invitation-date {
+    font-size: 13px;
+  }
+
+  html[lang="ru"] .invitation-message {
+    max-width: 90%;
+    font-size: 11px;
+    line-height: 1.32;
+  }
+
+  .polaroid--one {
+    top: 872px;
+    left: -14px;
+    width: 124px;
+  }
+
+  .polaroid--two {
+    width: 126px;
+  }
+
+  .cascade-two {
+    top: 232px;
+    width: 198px;
+  }
+}
+
+@media (max-width: 350px) {
+  .invitation-kicker {
+    font-size: 14px;
+  }
+
+  .invitation-names {
+    font-size: 42px;
+  }
+
+  html[lang="ka"] .invitation-names {
+    font-size: 26px;
+    transform: translateY(-21px);
+  }
+
+  html[lang="ru"] .invitation-names {
+    font-size: 35px;
+    transform: translateY(-14px);
+  }
+
+  .invitation-date {
+    font-size: 13px;
+  }
+
+  .invitation-message {
+    font-size: 11px;
+    line-height: 1.34;
+  }
+
+  .polaroid--one {
+    top: 825px;
+    left: -12px;
+    width: 114px;
   }
 }
