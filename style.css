@@ -1,43 +1,3 @@
-@font-face {
-  font-family: "DM Archium";
-  src: url("assets/dm-archium.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Geo Tabidze";
-  src: url("assets/geo_tabidze-12487314067.ttf") format("truetype");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
-}
-
-@font-face {
-  font-family: "GL Erekles Stamba";
-  src: url("assets/gl-erekles-stamba-regular-38755905276.ttf") format("truetype");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
-}
-
-:root {
-  --wine: #4b0711;
-  --wine-dark: #280207;
-  --ivory: #f2e7d8;
-  --paper: #f3e8d9;
-  --ink: #4c171d;
-  --line: rgba(242,231,216,.25);
-  --serif: "Cormorant Garamond", Georgia, serif;
-  --script: "Great Vibes", cursive;
-  --ui: "Manrope", Arial, sans-serif;
-  --geo: "GL Erekles Stamba", "FiraGO", Arial, sans-serif;
-  --geo-names: "Geo Tabidze", "DM Archium", "FiraGO", serif;
-  --tracking-wide: .08em;
-  --tracking-soft: .025em;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -206,28 +166,8 @@ html[lang=ka] .opening-names {
   text-transform: uppercase;
 }
 
-.opening-title {
-  position: relative;
-  z-index: 30;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin: 0 0 8px;
-  color: var(--ivory);
-  font: 400 clamp(43px, 11vw, 61px)/.95 var(--script);
-  white-space: nowrap;
-}
-
 .opening-title small {
   font: 400 22px/1 var(--serif);
-}
-
-html[lang="ka"] .opening-title {
-  gap: 9px;
-  font-family: var(--geo-names);
-  font-size: clamp(27px, 7.5vw, 38px);
-  line-height: 1.1;
 }
 
 html[lang="ka"] .opening-title small {
@@ -271,46 +211,38 @@ html[lang="ka"] .opening-title small {
   transform: translate(-50%, -50%);
 }
 
-/* Closed envelope: visible first */
 .envelope-closed {
   z-index: 3;
   opacity: 1;
   visibility: visible;
-  transition:
-    opacity .28s ease,
+  transition: opacity .28s ease,
     visibility 0s linear .28s;
 }
 
-/* Opened envelope: same size and position */
 .envelope-opened {
   z-index: 2;
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, -50%) scale(.992);
-  transition:
-    opacity .34s ease .1s,
+  transition: opacity .34s ease .1s,
     visibility 0s linear .1s,
     transform .5s cubic-bezier(.16, 1, .3, 1) .1s;
 }
 
-/* Flowers that rise from the envelope */
 .envelope-flowers {
   z-index: 4;
   width: 72%;
   height: 72%;
   top: 57%;
   opacity: 0;
-  transform:
-    translate(-50%, -50%)
+  transform: translate(-50%, -50%)
     translateY(105px)
     scale(.76);
   filter: drop-shadow(0 15px 14px rgba(0, 0, 0, .24));
-  transition:
-    opacity .42s ease .43s,
+  transition: opacity .42s ease .43s,
     transform .92s cubic-bezier(.16, 1, .3, 1) .39s;
 }
 
-/* D | K appears only on the closed flap */
 .envelope-monogram {
   position: absolute;
   z-index: 8;
@@ -323,12 +255,10 @@ html[lang="ka"] .opening-title small {
   pointer-events: none;
   transform: translate(-50%, -50%);
   text-shadow: 0 1px 0 rgba(255, 255, 255, .45);
-  transition:
-    opacity .22s ease,
+  transition: opacity .22s ease,
     transform .28s ease;
 }
 
-/* Decorative flower on the right side */
 .opening-side-flower {
   position: absolute;
   z-index: 28;
@@ -353,8 +283,7 @@ html[lang="ka"] .opening-title small {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: .02em;
-  transition:
-    opacity .35s ease,
+  transition: opacity .35s ease,
     transform .35s ease;
 }
 
@@ -362,7 +291,6 @@ html[lang="ka"] .opening-title small {
   animation: gentleFloat 2.2s ease-in-out infinite;
 }
 
-/* Closed image and initials disappear together */
 .envelope-stage.is-opening .envelope-closed {
   opacity: 0;
   visibility: hidden;
@@ -373,23 +301,19 @@ html[lang="ka"] .opening-title small {
   transform: translate(-50%, -50%) scale(.86);
 }
 
-/* Open envelope appears */
 .envelope-stage.is-opening .envelope-opened {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Flowers rise from inside */
 .envelope-stage.is-opening .envelope-flowers {
   opacity: 1;
-  transform:
-    translate(-50%, -50%)
+  transform: translate(-50%, -50%)
     translateY(-30px)
     scale(1);
 }
 
-/* Hold the result briefly and then reveal the website */
 .envelope-stage.is-opening .envelope-assembly {
   animation: assemblyExit 1.72s .08s cubic-bezier(.2, .7, .2, 1) both;
 }
@@ -404,63 +328,55 @@ html[lang="ka"] .opening-title small {
 }
 
 @keyframes gentleFloat {
-  0%,
+0%,
   100% {
-    transform: translateY(0) rotate(0);
-  }
+  transform: translateY(0) rotate(0);
+}
 
-  50% {
-    transform: translateY(-7px) rotate(-.35deg);
-  }
+50% {
+  transform: translateY(-7px) rotate(-.35deg);
+}
 }
 
 @keyframes sideFlowerSway {
-  0%,
+0%,
   100% {
-    transform: rotate(7deg);
-  }
+  transform: rotate(7deg);
+}
 
-  50% {
-    transform: rotate(3deg) translateY(-3px);
-  }
+50% {
+  transform: rotate(3deg) translateY(-3px);
+}
 }
 
 @keyframes sideFlowerOpen {
-  0% {
-    opacity: 1;
-    transform: rotate(7deg) translateY(0);
-  }
+0% {
+  opacity: 1;
+  transform: rotate(7deg) translateY(0);
+}
 
-  72% {
-    opacity: 1;
-    transform: rotate(4deg) translateY(-5px);
-  }
+72% {
+  opacity: 1;
+  transform: rotate(4deg) translateY(-5px);
+}
 
-  100% {
-    opacity: 0;
-    transform: rotate(2deg) translateY(22px);
-  }
+100% {
+  opacity: 0;
+  transform: rotate(2deg) translateY(22px);
+}
 }
 
 @keyframes assemblyExit {
-  0%,
+0%,
   72% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(42px) scale(.95);
-  }
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
-.site {
-  display: none;
-  width: min(430px,100%);
-  margin: 0 auto;
-  box-shadow: 0 0 90px rgba(0,0,0,.62);
-  overflow: hidden;
+100% {
+  opacity: 0;
+  transform: translateY(42px) scale(.95);
+}
 }
 
 .site.is-visible {
@@ -469,15 +385,15 @@ html[lang="ka"] .opening-title small {
 }
 
 @keyframes siteIn {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
+from {
+  opacity: 0;
+  transform: translateY(18px);
+}
 
-  to {
-    opacity: 1;
-    transform: none;
-  }
+to {
+  opacity: 1;
+  transform: none;
+}
 }
 
 .floating-tools {
@@ -523,10 +439,10 @@ html[lang="ka"] .opening-title small {
 }
 
 @keyframes pulse {
-  50% {
-    opacity: .25;
-    transform: scale(.65);
-  }
+50% {
+  opacity: .25;
+  transform: scale(.65);
+}
 }
 
 .panel {
@@ -537,7 +453,6 @@ html[lang="ka"] .opening-title small {
 .collage {
   min-height: 1880px;
   padding: 0 20px 68px;
-  
 }
 
 .marquee {
@@ -620,15 +535,15 @@ html[lang="ka"] .opening-title small {
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+to {
+  transform: rotate(360deg);
+}
 }
 
 @keyframes heroFloat {
-  50% {
-    transform: translateY(-7px) rotate(-.8deg);
-  }
+50% {
+  transform: translateY(-7px) rotate(-.8deg);
+}
 }
 
 .ornate-card {
@@ -644,118 +559,17 @@ html[lang="ka"] .opening-title small {
   width: 100%;
 }
 
-.ornate-copy {
-  position: absolute;
-  inset: 17.5% 14.5% 15.5%;
-  display: grid;
-  grid-template-rows: auto 1fr auto 1fr auto;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-  color: var(--ink);
-}
-.invitation-kicker {
-  grid-row: 1;
-  margin: 28px 0 16px;
-  font-size: clamp(18px, 4.8vw, 22px);
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: .015em;
-  text-transform: none;
-  justify-self: center;
-}
-
-.invitation-names {
-  grid-row: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: auto;
-  margin: 0;
-  color: var(--ink);
-  font-family: var(--script);
-  font-size: 62px;
-  font-weight: 400;
-  line-height: .92;
-  transform: translateY(-4px);
-}
-
 .invitation-names span {
   display: inline-block;
   white-space: nowrap;
 }
 
-.invitation-names small {
-  display: inline-block;
-  margin: 0 4px;
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1;
-}
-
-.invitation-date {
-  grid-row: 4;
-  align-self: center;
-  margin: 8px 0 6px;
-  font-size: clamp(16px, 4.2vw, 19px);
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: .03em;
-  text-transform: uppercase;
-}
-
-.invitation-message {
-  grid-row: 5;
-  margin: 8px auto 0;
-  font-size: clamp(14px, 3.8vw, 17px);
-  font-weight: 400;
-  letter-spacing: .004em;
-  text-align: center;
-   margin-top:0;
-    line-height:1.38;
-    max-width:86%;
-}
-
-html[lang="ka"] .invitation-kicker,
-html[lang="ka"] .invitation-date,
-html[lang="ka"] .invitation-message {
-  font-family: var(--geo);
-}
-
-html[lang="ka"] .invitation-names {
-  gap: 8px;
-  font-family: var(--geo-names);
-  font-size: 38px;
-  line-height: 1;
-  transform: translateY(-34px);
-}
-
-html[lang="ka"] .invitation-names small {
-  margin: 0 3px;
-  font-family: var(--geo);
-  font-size: 17px;
-  font-weight: 400;
-}
 html[lang="ru"] .invitation-kicker,
 html[lang="ru"] .invitation-date,
 html[lang="ru"] .invitation-message {
   font-family: var(--serif);
 }
 
-.polaroid {
-  position: absolute;
-  z-index: 120;
-  filter: drop-shadow(0 18px 18px rgba(0,0,0,.35));
-}
-
-.polaroid--one {
-  top: 920px;      /* 1 სმ-ით ზემოთ */
-  left: -4px;
-  width: 142px;
-  transform: rotate(-10deg);
-}
 .flower-note {
   position: relative;
   z-index: 46;
@@ -777,58 +591,13 @@ html[lang="ru"] .invitation-message {
   text-align: center;
 }
 
-.flower-note > div {
-  inset: 16% 13% 15%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.note-title,
-.flower-note p,
-.rsvp-note p {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: .025em;
-  text-transform: uppercase;
-}
-
 .doves {
   display: none;
-}
-
-.flower-note button,
-.rsvp-note button {
-  padding: 0 0 5px;
-  border: 0;
-  border-bottom: 1px solid rgba(76,23,29,.55);
-  background: none;
-  color: inherit;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: .025em;
-  text-transform: uppercase;
 }
 
 .flower-note button {
   margin-top: auto;
   margin-bottom: 2%;
-}
-
-.rsvp-note > div {
-  inset: 15% 12% 16%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.rsvp-note p {
-  margin: 0 0 22px;
 }
 
 .rsvp-note .note-copy,
@@ -837,10 +606,6 @@ html[lang="ru"] .invitation-message {
   font-weight: 400;
   line-height: 1.55;
   letter-spacing: .006em;
-}
-
-.rsvp-note button {
-  margin-top: 28px;
 }
 
 html[lang="ka"] .flower-note,
@@ -867,24 +632,6 @@ html[lang="ka"] .rsvp-note button {
   filter: drop-shadow(0 24px 26px rgba(0,0,0,.34));
 }
 
-.polaroid--two {
-  position: absolute;
-  z-index: 34;
-  top: 190px;
-  right: -6px;
-  width: 142px;
-  transform: rotate(8deg);
-}
-
-.cascade-two {
-  position: absolute;
-  z-index: 50; /* პოლაროიდზე ზემოთ */
-  top: 228px;
-  right: -58px;
-  width: 220px;
-  pointer-events: none;
-}
-
 .rsvp-note {
   position: relative;
   z-index: 43;
@@ -893,7 +640,6 @@ html[lang="ka"] .rsvp-note button {
   filter: drop-shadow(0 24px 28px rgba(0,0,0,.35));
   transform: rotate(-.65deg);
 }
-
 
 .seal {
   position: absolute;
@@ -994,15 +740,9 @@ html[lang=ka] .countdown-panel h3 {
   border: 1px solid rgba(242,231,216,.28);
   border-radius: 2px;
   color: var(--ivory);
-  background:
-    radial-gradient(circle at 75% 5%, rgba(255,255,255,.06), transparent 28%),
+  background: radial-gradient(circle at 75% 5%, rgba(255,255,255,.06), transparent 28%),
     linear-gradient(155deg,#64141f,#310309);
   box-shadow: 0 30px 80px rgba(0,0,0,.68);
-}
-
-.modal::backdrop {
-  background: rgba(15,0,3,.84);
-  backdrop-filter: blur(9px);
 }
 
 .close {
@@ -1024,24 +764,6 @@ html[lang=ka] .countdown-panel h3 {
 
 .close:hover {
   opacity: 1;
-}
-
-.modal > p {
-  margin: 0;
-  text-align: center;
-  font-family: var(--ui);
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  opacity: .82;
-}
-
-.modal h3 {
-  margin: 13px 0 27px;
-  text-align: center;
-  font: 400 42px/1.08 var(--script);
 }
 
 .event-row {
@@ -1219,12 +941,6 @@ html[lang="ka"] .modal label {
   text-transform: none;
 }
 
-/* =========================================
-   GEORGIAN TYPOGRAPHY
-   DM Archium — names and expressive headings
-   FiraGO — body copy, labels, controls and forms
-========================================= */
-
 html[lang="ka"] body,
 html[lang="ka"] button,
 html[lang="ka"] input,
@@ -1243,7 +959,6 @@ html[lang="ka"] .credit {
   font-family: var(--geo);
 }
 
-/* Georgian couple names */
 html[lang="ka"] .opening-names,
 html[lang="ka"] .opening-title,
 html[lang="ka"] .ornate-copy h2,
@@ -1252,300 +967,287 @@ html[lang="ka"] .modal h3 {
   font-family: var(--geo-names);
 }
 
-/* Connecting words such as „და“ remain Arial GEO */
 html[lang="ka"] .opening-title small,
 html[lang="ka"] .ornate-copy h2 small {
   font-family: var(--geo);
 }
 
 @media (max-width:430px) {
-  .opening {
-    padding: 0;
-  }
+.opening {
+  padding: 0;
+}
 
-  .opening-shell {
-    width: 100%;
-  }
+.opening-shell {
+  width: 100%;
+}
 
-  .opening-kicker {
-    display: none;
-  }
+.opening-kicker {
+  display: none;
+}
 
-  .letter-panel {
-    min-height: 100svh;
-    padding-top: 64px;
-  }
+.letter-panel {
+  min-height: 100svh;
+  padding-top: 64px;
+}
 
-  .opening-side-flower {
-    right: -4px;
-    top: 354px;
-  }
+.opening-side-flower {
+  right: -4px;
+  top: 354px;
+}
 
-  .site {
-    width: 100%;
-  }
+.site {
+  width: 100%;
+}
 
-  .collage {
-    min-height: 1870px;
-  }
+.collage {
+  min-height: 1870px;
+}
 
-  .floating-tools {
-    width: 100%;
-  }
+.floating-tools {
+  width: 100%;
+}
 }
 
 @media (max-width:390px) {
-  .letter-panel {
-    padding-left: 22px;
-    padding-right: 22px;
-  }
+.letter-panel {
+  padding-left: 22px;
+  padding-right: 22px;
+}
 
-  .envelope-stage {
-    height: 345px;
-  }
+.envelope-stage {
+  height: 345px;
+}
 
-  .opening-side-flower {
-    top: 345px;
-    width: 96px;
-  }
+.opening-side-flower {
+  top: 345px;
+  width: 96px;
+}
 
-  .collage {
-    min-height: 1770px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+.collage {
+  min-height: 1770px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
 
-  .marquee {
-    margin-left: -16px;
-    margin-right: -16px;
-  }
+.marquee {
+  margin-left: -16px;
+  margin-right: -16px;
+}
 
-  .hero-envelope {
-    width: 220px;
-  }
+.hero-envelope {
+  width: 220px;
+}
 
-  .hero-cascade {
-    width: 230px;
-  }
+.hero-cascade {
+  width: 230px;
+}
 
-  .vinyl-button {
-    width: 106px;
-    height: 106px;
-  }
+.vinyl-button {
+  width: 106px;
+  height: 106px;
+}
 
-  .ornate-card {
-    width: 111%;
-    margin-left: -5.5%;
-  }
+.ornate-card {
+  width: 111%;
+  margin-left: -5.5%;
+}
 
-  .invitation-names {
-    font-size: 50px;
-  }
+.invitation-names {
+  font-size: 50px;
+}
 
-  html[lang="ka"] .invitation-names {
-    gap: 7px;
-    font-size: 31px;
-  }
+html[lang="ka"] .invitation-names {
+  gap: 7px;
+  font-size: 31px;
+}
 
-  html[lang="ka"] .invitation-names small {
-    margin: 0 1px;
-    font-size: 15px;
-  }
+html[lang="ka"] .invitation-names small {
+  margin: 0 1px;
+  font-size: 15px;
+}
 
-  .invitation-kicker {
-    font-size: 19px;
-  }
+.invitation-kicker {
+  font-size: 19px;
+}
 
-  .invitation-date {
-    font-size: 17px;
-  }
+.invitation-date {
+  font-size: 17px;
+}
 
-  .invitation-message {
-    font-size: 15px;
-  }
+.invitation-message {
+  font-size: 15px;
+}
 
-  .polaroid--one {
-    top: 743px;
-    width: 127px;
-  }
+.polaroid--one {
+  top: 743px;
+  width: 127px;
+}
 
-  .flower-note {
-    margin-bottom: -52px;
-  }
+.flower-note {
+  margin-bottom: -52px;
+}
 
-  .coupe {
-    width: 310px;
-  }
+.coupe {
+  width: 310px;
+}
 
-  .polaroid--two {
-    width: 126px;
-  }
+.polaroid--two {
+  width: 126px;
+}
 
-  .cascade-two {
-    width: 198px;
-  }
+.cascade-two {
+  width: 198px;
+}
 
-  .rsvp-note {
-    width: min(310px,96%);
-  }
+.rsvp-note {
+  width: min(310px,96%);
+}
 
-  .seal {
-    width: 137px;
-  }
+.seal {
+  width: 137px;
+}
 }
 
 @media (max-width:350px) {
-  .envelope-stage {
-    height: 315px;
-  }
-
-  .opening-title {
-    font-size: 41px;
-  }
-
-  html[lang="ka"] .opening-title {
-    font-size: 25px;
-  }
-
-  .opening-side-flower {
-    top: 324px;
-    width: 84px;
-  }
-
-  .collage {
-    min-height: 1650px;
-  }
-
-  .hero-envelope {
-    width: 198px;
-  }
-
-  .vinyl-button {
-    width: 93px;
-    height: 93px;
-  }
-
-  .ornate-copy {
-    inset: 17% 13.5% 15%;
-  }
-
-  .invitation-kicker {
-    font-size: 17px;
-    line-height: 1.38;
-  }
-
-  .invitation-names {
-    gap: 6px;
-    font-size: 44px;
-  }
-
-  html[lang="ka"] .invitation-names {
-    gap: 5px;
-    font-size: 27px;
-  }
-
-  html[lang="ka"] .invitation-names small {
-    margin: 0;
-    font-size: 13px;
-  }
-
-  .invitation-date {
-    font-size: 15px;
-  }
-
-  .invitation-message {
-    font-size: 13px;
-    line-height: 1.48;
-  }
-
-  .flower-note {
-    margin-bottom: -45px;
-  }
-
-  .coupe {
-    width: 286px;
-  }
-
-  .rsvp-note {
-    width: min(290px,96%);
-  }
-
-  .seal {
-    width: 126px;
-  }
+.envelope-stage {
+  height: 315px;
 }
 
+.opening-title {
+  font-size: 41px;
+}
+
+html[lang="ka"] .opening-title {
+  font-size: 25px;
+}
+
+.opening-side-flower {
+  top: 324px;
+  width: 84px;
+}
+
+.collage {
+  min-height: 1650px;
+}
+
+.hero-envelope {
+  width: 198px;
+}
+
+.vinyl-button {
+  width: 93px;
+  height: 93px;
+}
+
+.ornate-copy {
+  inset: 17% 13.5% 15%;
+}
+
+.invitation-kicker {
+  font-size: 17px;
+  line-height: 1.38;
+}
+
+.invitation-names {
+  gap: 6px;
+  font-size: 44px;
+}
+
+html[lang="ka"] .invitation-names {
+  gap: 5px;
+  font-size: 27px;
+}
+
+html[lang="ka"] .invitation-names small {
+  margin: 0;
+  font-size: 13px;
+}
+
+.invitation-date {
+  font-size: 15px;
+}
+
+.invitation-message {
+  font-size: 13px;
+  line-height: 1.48;
+}
+
+.flower-note {
+  margin-bottom: -45px;
+}
+
+.coupe {
+  width: 286px;
+}
+
+.rsvp-note {
+  width: min(290px,96%);
+}
+
+.seal {
+  width: 126px;
+}
+}
 
 @media (max-width: 390px) {
-  .modal {
-    padding: 36px 21px 26px;
-  }
+.modal {
+  padding: 36px 21px 26px;
+}
 
-  .modal h3 {
-    margin-bottom: 24px;
-  }
+.modal h3 {
+  margin-bottom: 24px;
+}
 
-  html[lang="ka"] .modal h3 {
-    font-size: 27px;
-  }
+html[lang="ka"] .modal h3 {
+  font-size: 27px;
+}
 
-  .note-title,
+.note-title,
   .flower-note p,
   .rsvp-note p {
-    font-size: 16px;
-  }
+  font-size: 16px;
+}
 
-  .rsvp-note .note-copy,
+.rsvp-note .note-copy,
   .rsvp-note span {
-    font-size: 13px;
-  }
+  font-size: 13px;
+}
 }
 
 @media (prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-    scroll-behavior: auto !important;
-  }
+*,*::before,*::after {
+  animation-duration: .01ms !important;
+  transition-duration: .01ms !important;
+  scroll-behavior: auto !important;
+}
 }
 
-/* =========================================
-   FINAL UI POLISH — mobile-first refinement
-========================================= */
-
-/* Opening typography: give the names clean breathing room */
 .opening-title {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 0 8px;
+  color: var(--ivory);
+  font: 400 clamp(43px, 11vw, 61px)/.95 var(--script);
+  white-space: nowrap;
   margin-top: 10px;
 }
 
 html[lang="ka"] .opening-title {
+  gap: 9px;
+  font-family: var(--geo-names);
+  font-size: clamp(27px, 7.5vw, 38px);
+  line-height: 1.1;
   margin-top: 14px;
-}
-
-/* Main invitation: tighter editorial rhythm */
-.ornate-copy {
-  grid-template-rows: auto .72fr auto .38fr auto;
-}
-
-.invitation-message {
-  line-height: 1.38;
 }
 
 html[lang="ka"] .invitation-message {
   line-height: 1.42;
 }
 
-/* Keep the first polaroid clear of the invitation copy */
-.polaroid--one {
-  top: 782px;
-}
-
-/* Reveal more of the second polaroid */
-.cascade-two {
-  top: 250px;
-}
-
-/* Expressive headings use the same Georgian display face */
 html[lang="ka"] .note-title {
   font-family: var(--geo-names);
   font-weight: 400;
@@ -1554,7 +1256,6 @@ html[lang="ka"] .note-title {
   text-transform: none;
 }
 
-/* Full-screen focused overlays */
 dialog.modal {
   position: fixed;
   inset: 0;
@@ -1587,12 +1288,23 @@ dialog.modal {
 }
 
 .modal > p {
+  margin: 0;
+  text-align: center;
+  font-family: var(--ui);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  opacity: .82;
   flex: 0 0 auto;
 }
 
 .modal h3 {
-  flex: 0 0 auto;
   margin: 10px 0 20px;
+  text-align: center;
+  font: 400 42px/1.08 var(--script);
+  flex: 0 0 auto;
 }
 
 .modal--details .event-row {
@@ -1637,242 +1349,132 @@ dialog.modal {
 }
 
 @media (max-width: 390px) {
-  .polaroid--one {
-    top: 742px;
-  }
+.polaroid--one {
+  top: 742px;
+}
 
-  .cascade-two {
-    top: 242px;
-  }
+.cascade-two {
+  top: 242px;
+}
 
-  dialog.modal {
-    padding-left: 21px;
-    padding-right: 21px;
-  }
+dialog.modal {
+  padding-left: 21px;
+  padding-right: 21px;
+}
 
-  .modal h3 {
-    margin-bottom: 17px;
-  }
+.modal h3 {
+  margin-bottom: 17px;
+}
 
-  .modal--details .event-row {
-    padding: 11px 0;
-  }
+.modal--details .event-row {
+  padding: 11px 0;
+}
 
-  .modal--rsvp form {
-    gap: 11px;
-  }
+.modal--rsvp form {
+  gap: 11px;
+}
 }
 
 @media (max-height: 700px) {
-  dialog.modal {
-    justify-content: flex-start;
-    padding-top: max(34px, env(safe-area-inset-top));
-    padding-bottom: max(18px, env(safe-area-inset-bottom));
-  }
-
-  .modal h3 {
-    margin: 7px 0 13px;
-  }
-
-  .modal--details .event-row {
-    padding: 9px 0;
-  }
-
-  .modal--details .venue {
-    padding: 11px 0;
-  }
-
-  .modal--rsvp form {
-    gap: 9px;
-  }
-
-  .modal--rsvp textarea {
-    min-height: 46px;
-    max-height: 52px;
-  }
+dialog.modal {
+  justify-content: flex-start;
+  padding-top: max(34px, env(safe-area-inset-top));
+  padding-bottom: max(18px, env(safe-area-inset-bottom));
 }
 
-/* =========================================
-   FINAL INVITATION LAYOUT FIX
-   - First polaroid stays below invitation text
-   - Russian copy remains inside the frame
-   - Couple names remain perfectly centered
-========================================= */
-
-/* Keep all invitation content constrained to the inner frame area */
-.ornate-copy {
-  inset: 17.5% 14.5% 15.5%;
-  width: auto;
-  max-width: none;
-  overflow: hidden;
-  justify-items: center;
-  text-align: center;
+.modal h3 {
+  margin: 7px 0 13px;
 }
 
-.invitation-kicker,
-.invitation-names,
-.invitation-date,
-.invitation-message {
-  width: 100%;
-  max-width: 100%;
-  text-align: center;
-  justify-self: center;
+.modal--details .event-row {
+  padding: 9px 0;
 }
 
-/* Names stay centered as one balanced line */
-.invitation-names {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-  margin-inline: auto;
-  transform: translateY(-4px);
+.modal--details .venue {
+  padding: 11px 0;
 }
 
-.invitation-names span,
-.invitation-names small {
-  flex: 0 0 auto;
+.modal--rsvp form {
+  gap: 9px;
 }
 
-/* Russian layout: smaller, fixed, centered and safely inside the frame */
-html[lang="ru"] .ornate-copy {
-  inset: 18.5% 15.5% 16.5%;
-  grid-template-rows: auto .62fr auto .30fr auto;
+.modal--rsvp textarea {
+  min-height: 46px;
+  max-height: 52px;
 }
-
-html[lang="ru"] .invitation-kicker {
-  margin: 20px auto 8px;
-  max-width: 92%;
-  font-size: clamp(15px, 3.8vw, 18px);
-  line-height: 1.24;
-  letter-spacing: .01em;
-}
-
-html[lang="ru"] .invitation-names {
-  gap: 7px;
-  max-width: 100%;
-  font-size: clamp(43px,11vw,54px);
-  line-height: .92;
-  transform: translateY(-26px);
-}
-
-html[lang="ru"] .invitation-names small {
-  margin: 0 2px;
-  font-size: 16px;
-}
-
-html[lang="ru"] .invitation-date {
-  margin: 2px auto 2px;
-  max-width: 94%;
-  font-size: clamp(14px, 3.7vw, 17px);
-  line-height: 1.15;
-  letter-spacing: .02em;
-}
-
-html[lang="ru"] .invitation-message {
-  margin: 0 auto;
-  max-width: 88%;
-  font-size: clamp(12px, 3.2vw, 14px);
-  line-height: 1.32;
-  letter-spacing: 0;
-  overflow-wrap: anywhere;
-}
-
-/* First polaroid: positioned safely below the complete invitation card */
-.polaroid--one {
-  top: 960px;
-  left: -4px;
-  width: 142px;
-  transform: rotate(-10deg);
 }
 
 @media (max-width: 390px) {
-  html[lang="ru"] .ornate-copy {
-    inset: 18.5% 15% 16%;
-  }
+html[lang="ru"] .ornate-copy {
+  inset: 18.5% 15% 16%;
+}
 
-  html[lang="ru"] .invitation-kicker {
-    margin-top: 16px;
-    font-size: 15px;
-  }
+html[lang="ru"] .invitation-kicker {
+  margin-top: 16px;
+  font-size: 15px;
+}
 
-  html[lang="ru"] .invitation-names {
-    gap: 5px;
-    font-size: 43px;
-    transform: translateY(-8px);
-  }
+html[lang="ru"] .invitation-names {
+  gap: 5px;
+  font-size: 43px;
+  transform: translateY(-8px);
+}
 
-  html[lang="ru"] .invitation-names small {
-    font-size: 14px;
-  }
+html[lang="ru"] .invitation-names small {
+  font-size: 14px;
+}
 
-  html[lang="ru"] .invitation-date {
-    font-size: 14px;
-  }
+html[lang="ru"] .invitation-date {
+  font-size: 14px;
+}
 
-  html[lang="ru"] .invitation-message {
-    max-width: 90%;
-    font-size: 12px;
-    line-height: 1.3;
-  }
+html[lang="ru"] .invitation-message {
+  max-width: 90%;
+  font-size: 12px;
+  line-height: 1.3;
+}
 
-  .polaroid--one {
-    top: 915px;
-    left: -5px;
-    width: 127px;
-  }
+.polaroid--one {
+  top: 915px;
+  left: -5px;
+  width: 127px;
+}
 }
 
 @media (max-width: 350px) {
-  html[lang="ru"] .ornate-copy {
-    inset: 18% 14.5% 15.5%;
-  }
-
-  html[lang="ru"] .invitation-kicker {
-    font-size: 13px;
-    line-height: 1.25;
-  }
-
-  html[lang="ru"] .invitation-names {
-    gap: 4px;
-    font-size: 37px;
-  }
-
-  html[lang="ru"] .invitation-names small {
-    font-size: 12px;
-  }
-
-  html[lang="ru"] .invitation-date {
-    font-size: 12px;
-  }
-
-  html[lang="ru"] .invitation-message {
-    font-size: 11px;
-    line-height: 1.28;
-  }
-
-  .polaroid--one {
-    top: 860px;
-    width: 116px;
-  }
+html[lang="ru"] .ornate-copy {
+  inset: 18% 14.5% 15.5%;
 }
 
-/* =========================================================
-   FINAL CONSOLIDATED UI SYSTEM
-   Typography, spacing and layer fixes
-========================================================= */
-
-:root {
-  --space-1: 6px;
-  --space-2: 10px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 36px;
-  --space-6: 52px;
+html[lang="ru"] .invitation-kicker {
+  font-size: 13px;
+  line-height: 1.25;
 }
 
-/* Consistent text rendering */
+html[lang="ru"] .invitation-names {
+  gap: 4px;
+  font-size: 37px;
+}
+
+html[lang="ru"] .invitation-names small {
+  font-size: 12px;
+}
+
+html[lang="ru"] .invitation-date {
+  font-size: 12px;
+}
+
+html[lang="ru"] .invitation-message {
+  font-size: 11px;
+  line-height: 1.28;
+}
+
+.polaroid--one {
+  top: 860px;
+  width: 116px;
+}
+}
+
 body,
 button,
 input,
@@ -1882,7 +1484,6 @@ select {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Prevent unintended clipping while keeping horizontal overflow controlled */
 .panel,
 .collage,
 .hero-scene,
@@ -1891,19 +1492,27 @@ select {
 }
 
 .site {
+  display: none;
+  width: min(430px,100%);
+  margin: 0 auto;
+  box-shadow: 0 0 90px rgba(0,0,0,.62);
+  overflow: hidden;
   overflow-x: clip;
   overflow-y: visible;
 }
 
-/* Unified invitation card rhythm */
 .ornate-copy {
+  position: absolute;
   inset: 17.5% 14.5% 15.5%;
   display: grid;
   grid-template-rows: auto minmax(24px, .55fr) auto minmax(10px, .2fr) auto;
   align-items: center;
   justify-items: center;
-  overflow: hidden;
   text-align: center;
+  color: var(--ink);
+  width: auto;
+  max-width: none;
+  overflow: hidden;
 }
 
 .invitation-kicker,
@@ -1912,31 +1521,39 @@ select {
 .invitation-message {
   width: 100%;
   max-width: 100%;
-  margin-inline: auto;
   text-align: center;
   justify-self: center;
+  margin-inline: auto;
 }
 
 .invitation-kicker {
+  grid-row: 1;
   margin: 20px 0 8px;
   font-size: clamp(16px, 4.1vw, 19px);
   font-weight: 500;
   line-height: 1.28;
   letter-spacing: .01em;
+  text-transform: none;
+  justify-self: center;
 }
 
 .invitation-names {
+  grid-row: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
   gap: 8px;
+  width: auto;
   margin: 0;
+  color: var(--ink);
+  font-family: var(--script);
   font-size: clamp(50px, 13.5vw, 60px);
   font-weight: 400;
   line-height: .94;
-  white-space: nowrap;
   transform: translateY(-14px);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-inline: auto;
 }
 
 .invitation-names span,
@@ -1946,30 +1563,38 @@ select {
 }
 
 .invitation-names small {
+  display: inline-block;
   margin: 0 2px;
+  font-family: var(--serif);
   font-size: 18px;
+  font-weight: 400;
   line-height: 1;
 }
 
 .invitation-date {
+  grid-row: 4;
+  align-self: center;
   margin: 0;
   font-size: clamp(14px, 3.8vw, 17px);
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: .025em;
+  text-transform: uppercase;
 }
 
 .invitation-message {
-  max-width: 86%;
+  grid-row: 5;
   margin: 4px auto 0;
   font-size: clamp(12px, 3.35vw, 14px);
   font-weight: 400;
-  line-height: 1.38;
   letter-spacing: 0;
+  text-align: center;
+  margin-top: 0;
+  line-height: 1.38;
+  max-width: 86%;
   overflow-wrap: anywhere;
 }
 
-/* Georgian typography */
 html[lang="ka"] .invitation-kicker,
 html[lang="ka"] .invitation-date,
 html[lang="ka"] .invitation-message {
@@ -1981,32 +1606,35 @@ html[lang="ka"] .invitation-names {
   font-family: var(--geo-names);
   font-size: clamp(29px, 8.5vw, 36px);
   line-height: 1.05;
-  transform: translateY(-28px);
+  transform: translateY(-55px);
 }
 
 html[lang="ka"] .invitation-names small {
   margin: 0 1px;
   font-family: var(--geo);
   font-size: 15px;
+  font-weight: 400;
 }
 
-/* Russian typography */
 html[lang="ru"] .ornate-copy {
   inset: 18% 15% 16%;
   grid-template-rows: auto minmax(18px, .45fr) auto minmax(8px, .18fr) auto;
 }
 
 html[lang="ru"] .invitation-kicker {
-  max-width: 92%;
   margin: 16px auto 6px;
+  max-width: 92%;
   font-size: clamp(14px, 3.6vw, 17px);
   line-height: 1.25;
+  letter-spacing: .01em;
 }
 
 html[lang="ru"] .invitation-names {
   gap: 6px;
+  max-width: 100%;
   font-size: clamp(41px, 10.8vw, 51px);
-  transform: translateY(-20px);
+  line-height: .92;
+  transform: translateY(-55px);
 }
 
 html[lang="ru"] .invitation-names small {
@@ -2015,16 +1643,22 @@ html[lang="ru"] .invitation-names small {
 }
 
 html[lang="ru"] .invitation-date {
+  margin: 2px auto 2px;
+  max-width: 94%;
   font-size: clamp(13px, 3.5vw, 16px);
+  line-height: 1.15;
+  letter-spacing: .02em;
 }
 
 html[lang="ru"] .invitation-message {
+  margin: 0 auto;
   max-width: 88%;
   font-size: clamp(11px, 3vw, 13px);
   line-height: 1.34;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
-/* Consistent note typography and spacing */
 .note-title,
 .flower-note p,
 .rsvp-note p {
@@ -2033,25 +1667,42 @@ html[lang="ru"] .invitation-message {
   font-weight: 500;
   line-height: 1.28;
   letter-spacing: .015em;
+  text-transform: uppercase;
 }
 
 .flower-note > div {
   inset: 16% 13% 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   gap: var(--space-3);
 }
 
 .flower-note button,
 .rsvp-note button {
+  padding: 0 0 5px;
+  border: 0;
+  border-bottom: 1px solid rgba(76,23,29,.55);
+  background: none;
+  color: inherit;
   font-size: 12px;
+  font-weight: 500;
   line-height: 1.25;
   letter-spacing: .02em;
+  text-transform: uppercase;
 }
 
 .rsvp-note > div {
   inset: 15% 12% 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .rsvp-note p {
+  margin: 0 0 22px;
   margin-bottom: 18px;
 }
 
@@ -2059,21 +1710,22 @@ html[lang="ru"] .invitation-message {
   margin-top: 22px;
 }
 
-/* First polaroid only: raised, visible, and clear of copy */
 .polaroid {
+  position: absolute;
+  z-index: 120;
   filter: drop-shadow(0 18px 18px rgba(0, 0, 0, .35));
 }
 
 .polaroid--one {
-  z-index: 120;
   top: 900px;
   left: -16px;
   width: 136px;
   transform: rotate(-10deg);
+  z-index: 120;
 }
 
-/* Second polaroid stays lower; floral cascade sits above it */
 .polaroid--two {
+  position: absolute;
   z-index: 34;
   top: 190px;
   right: -6px;
@@ -2082,140 +1734,134 @@ html[lang="ru"] .invitation-message {
 }
 
 .cascade-two {
+  position: absolute;
   z-index: 50;
-  top: 300px; /* 22px-ით ქვემოთ */
+  top: 300px;
   right: -58px;
   width: 220px;
   pointer-events: none;
 }
 
-/* Mobile refinement */
 @media (max-width: 390px) {
-  .ornate-copy {
-    inset: 17.5% 14% 15.5%;
-  }
+.ornate-copy {
+  inset: 17.5% 14% 15.5%;
+}
 
-  .invitation-kicker {
-    margin-top: 16px;
-    font-size: 16px;
-  }
+.invitation-kicker {
+  margin-top: 16px;
+  font-size: 16px;
+}
 
-  .invitation-names {
-    gap: 6px;
-    font-size: 48px;
-    transform: translateY(-12px);
-  }
+.invitation-names {
+  gap: 6px;
+  font-size: 48px;
+  transform: translateY(-12px);
+}
 
-  .invitation-names small {
-    font-size: 15px;
-  }
+.invitation-names small {
+  font-size: 15px;
+}
 
-  .invitation-date {
-    font-size: 15px;
-  }
+.invitation-date {
+  font-size: 15px;
+}
 
-  .invitation-message {
-    max-width: 88%;
-    font-size: 12px;
-    line-height: 1.36;
-  }
+.invitation-message {
+  max-width: 88%;
+  font-size: 12px;
+  line-height: 1.36;
+}
 
-  html[lang="ka"] .invitation-names {
-    gap: 5px;
-    font-size: 30px;
-    transform: translateY(-24px);
-  }
+html[lang="ka"] .invitation-names {
+  gap: 5px;
+  font-size: 30px;
+  transform: translateY(-36px);
+}
 
-  html[lang="ka"] .invitation-names small {
-    font-size: 13px;
-  }
+html[lang="ka"] .invitation-names small {
+  font-size: 13px;
+}
 
-  html[lang="ru"] .ornate-copy {
-    inset: 18% 14.5% 16%;
-  }
+html[lang="ru"] .ornate-copy {
+  inset: 18% 14.5% 16%;
+}
 
-  html[lang="ru"] .invitation-kicker {
-    margin-top: 14px;
-    font-size: 14px;
-  }
+html[lang="ru"] .invitation-kicker {
+  margin-top: 14px;
+  font-size: 14px;
+}
 
-  html[lang="ru"] .invitation-names {
-    gap: 4px;
-    font-size: 40px;
-    transform: translateY(-16px);
-  }
+html[lang="ru"] .invitation-names {
+  gap: 4px;
+  font-size: 40px;
+  transform: translateY(-16px);
+}
 
-  html[lang="ru"] .invitation-names small {
-    font-size: 13px;
-  }
+html[lang="ru"] .invitation-names small {
+  font-size: 13px;
+}
 
-  html[lang="ru"] .invitation-date {
-    font-size: 13px;
-  }
+html[lang="ru"] .invitation-date {
+  font-size: 13px;
+}
 
-  html[lang="ru"] .invitation-message {
-    max-width: 90%;
-    font-size: 11px;
-    line-height: 1.32;
-  }
+html[lang="ru"] .invitation-message {
+  max-width: 90%;
+  font-size: 11px;
+  line-height: 1.32;
+}
 
-  .polaroid--one {
-    top: 872px;
-    left: -14px;
-    width: 124px;
-  }
+.polaroid--one {
+  top: 872px;
+  left: -14px;
+  width: 124px;
+}
 
-  .polaroid--two {
-    width: 126px;
-  }
+.polaroid--two {
+  width: 126px;
+}
 
-  .cascade-two {
-    top: 232px;
-    width: 198px;
-  }
+.cascade-two {
+  top: 232px;
+  width: 198px;
+}
 }
 
 @media (max-width: 350px) {
-  .invitation-kicker {
-    font-size: 14px;
-  }
-
-  .invitation-names {
-    font-size: 42px;
-  }
-
-  html[lang="ka"] .invitation-names {
-    font-size: 26px;
-    transform: translateY(-21px);
-  }
-
-  html[lang="ru"] .invitation-names {
-    font-size: 35px;
-    transform: translateY(-14px);
-  }
-
-  .invitation-date {
-    font-size: 13px;
-  }
-
-  .invitation-message {
-    font-size: 11px;
-    line-height: 1.34;
-  }
-
-  .polaroid--one {
-    top: 825px;
-    left: -12px;
-    width: 114px;
-  }
+.invitation-kicker {
+  font-size: 14px;
 }
-/* =========================================
-   FINAL GEORGIAN FONT FIX
-   Geo Tabidze — მხოლოდ ლათინურად ჩაწერილი სახელები
-   GL Erekles Stamba — ყველა სხვა ქართული ტექსტი
-========================================= */
 
-/* ყველა ჩვეულებრივი ქართული ტექსტი */
+.invitation-names {
+  font-size: 42px;
+}
+
+html[lang="ka"] .invitation-names {
+  font-size: 26px;
+  transform: translateY(-32px);
+}
+
+html[lang="ru"] .invitation-names {
+  font-size: 35px;
+  transform: translateY(-14px);
+}
+
+.invitation-date {
+  font-size: 13px;
+}
+
+.invitation-message {
+  font-size: 11px;
+  line-height: 1.34;
+}
+
+.polaroid--one {
+  top: 825px;
+  left: -12px;
+  width: 114px;
+}
+}
+
 html[lang="ka"] body,
 html[lang="ka"] button,
 html[lang="ka"] input,
@@ -2245,15 +1891,111 @@ html[lang="ka"] .modal h3 {
   font-family: "GL Erekles Stamba", "FiraGO", Arial, sans-serif !important;
 }
 
-/* მხოლოდ წყვილის სახელები — HTML-ში ლათინური ასოებით */
 html[lang="ka"] .opening-names,
 html[lang="ka"] .opening-title,
 html[lang="ka"] .invitation-names {
   font-family: "Geo Tabidze", serif !important;
 }
 
-/* „და“ ჩვეულებრივი ქართული ფონტით */
+@font-face {
+  font-family: "Geo Tabidze";
+  src: url("assets/geo_tabidze-12487314067.woff2") format("woff2"),
+    url("assets/geo_tabidze-12487314067.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GL Erekles Stamba";
+  src: url("assets/gl-erekles-stamba-regular-38755905276.woff2") format("woff2"),
+    url("assets/gl-erekles-stamba-regular-38755905276.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --wine: #4b0711;
+  --wine-dark: #280207;
+  --ivory: #f2e7d8;
+  --paper: #f3e8d9;
+  --ink: #4c171d;
+  --line: rgba(242,231,216,.25);
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --script: "Great Vibes", cursive;
+  --ui: "Manrope", Arial, sans-serif;
+  --geo: "GL Erekles Stamba", "FiraGO", Arial, sans-serif;
+  --geo-names: "Geo Tabidze", "DM Archium", "FiraGO", serif;
+  --tracking-wide: .08em;
+  --tracking-soft: .025em;
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 36px;
+  --space-6: 52px;
+}
+
+html[lang="ka"] body,
+html[lang="ka"] button,
+html[lang="ka"] input,
+html[lang="ka"] textarea,
+html[lang="ka"] select,
+html[lang="ka"] .opening-overline,
+html[lang="ka"] .tap-copy,
+html[lang="ka"] .marquee,
+html[lang="ka"] .invitation-kicker,
+html[lang="ka"] .invitation-date,
+html[lang="ka"] .invitation-message,
+html[lang="ka"] .flower-note,
+html[lang="ka"] .rsvp-note,
+html[lang="ka"] .countdown-panel,
+html[lang="ka"] .modal,
+html[lang="ka"] .credit,
+html[lang="ka"] .note-copy,
+html[lang="ka"] .event-row,
+html[lang="ka"] .venue {
+  font-family: var(--geo) !important;
+}
+
+html[lang="ka"] .opening-title > span,
+html[lang="ka"] .opening-names,
+html[lang="ka"] .invitation-names > span,
+html[lang="ka"] .countdown-panel h3 {
+  font-family: var(--geo-names) !important;
+  font-weight: 400;
+}
+
 html[lang="ka"] .opening-title small,
 html[lang="ka"] .invitation-names small {
-  font-family: "GL Erekles Stamba", "FiraGO", Arial, sans-serif !important;
+  font-family: var(--geo) !important;
+}
+
+html[lang="ka"] button,
+html[lang="ka"] input:not([type="radio"]),
+html[lang="ka"] textarea,
+html[lang="ka"] select {
+  -webkit-appearance: none;
+  appearance: none;
+  font-synthesis: none;
+}
+.modal input[type="radio"] {
+  -webkit-appearance: radio;
+  appearance: auto;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #f0dfca;
+  cursor: pointer;
+}
+html[lang="ka"] .modal input[type="radio"],
+html[lang="ru"] .modal input[type="radio"] {
+  -webkit-appearance: radio !important;
+  appearance: auto !important;
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  visibility: visible;
+  accent-color: #f0dfca;
 }
