@@ -13,7 +13,7 @@
     content="#300309"
   >
 
-  <title>დავითი და  ქეთო— საქორწილო მოსაწვევი</title>
+  <title>დავითი და ქეთო — საქორწილო მოსაწვევი</title>
 
   <meta
     name="description"
@@ -30,14 +30,15 @@
     href="https://fonts.gstatic.com"
     crossorigin
   >
-<link
+
+  <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=FiraGO:wght@400;500;600&family=Great+Vibes&family=Manrope:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   >
 
   <link
     rel="stylesheet"
-    href="style.css"
+    href="style.css?v=8"
   >
 </head>
 
@@ -99,114 +100,108 @@
 
         </div>
 
-      <!-- OPENING TITLE -->
+        <!-- OPENING TITLE -->
 
-      <p
-        class="opening-overline"
-        data-ka="თქვენთვის წერილია"
-        data-ru="ВАМ ПРИШЛО ПИСЬМО ОТ"
-      >
-        თქვენთვის წერილია
-      </p>
-
-      <h1 class="opening-title">
-        <span
-          data-ka="daviTi"
-          data-ru="Давид"
-        >
-          დავითი
-        </span>
-
-        <small
-          data-ka="და"
-          data-ru="и"
-        >
-          და
-        </small>
-
-        <span
-          data-ka="qeTo"
-          data-ru="Кето"
-        >
-          ქეთო
-        </span>
-      </h1>
-
-      <!-- THREE-LAYER ENVELOPE -->
-
-      <button
-        id="openInvitation"
-        class="envelope-stage"
-        type="button"
-        aria-label="მოსაწვევის გახსნა"
-        data-aria-ka="მოსაწვევის გახსნა"
-        data-aria-ru="Открыть приглашение"
-      >
-
-        <span class="envelope-assembly">
-
-          <!-- 1. CLOSED ENVELOPE -->
-
-          <img
-            class="envelope-layer envelope-closed"
-            src="assets/closed-envelope.png"
-            alt=""
-            aria-hidden="true"
-          >
-
-          <!-- 2. OPENED ENVELOPE -->
-
-          <img
-            class="envelope-layer envelope-opened"
-            src="assets/opened-envelope.png"
-            alt=""
-            aria-hidden="true"
-          >
-
-          <!-- 3. FLOWERS THAT RISE FROM INSIDE -->
-
-          <img
-            class="envelope-layer envelope-flowers"
-            src="assets/flowers.png"
-            alt=""
-            aria-hidden="true"
-          >
-
-          <!-- MONOGRAM — VISIBLE ONLY WHEN CLOSED -->
+        <h1 class="opening-title">
 
           <span
-            class="envelope-monogram"
-            aria-hidden="true"
+            data-ka="daviTi"
+            data-ru="Давид"
           >
-            D | K
+            daviTi
           </span>
 
-        </span>
+          <small
+            data-ka="და"
+            data-ru="и"
+          >
+            da
+          </small>
 
-      </button>
+          <span
+            data-ka="qeTo"
+            data-ru="Кето"
+          >
+            qeTo
+          </span>
 
-      <!-- SIDE FLOWER — REMAINS VISIBLE WHILE OPENING -->
+        </h1>
 
-      <img
-        class="opening-side-flower"
-        src="assets/white-lily.png"
-        alt=""
-        aria-hidden="true"
-      >
+        <!-- THREE-LAYER ENVELOPE -->
 
-      <p
-        class="tap-copy"
-        data-ka="დააჭირეთ კონვერტს გასახსნელად"
-        data-ru="НАЖМИТЕ НА КОНВЕРТ, ЧТОБЫ ОТКРЫТЬ"
-      >
-        დააჭირეთ კონვერტს გასახსნელად
-      </p>
+        <button
+          id="openInvitation"
+          class="envelope-stage"
+          type="button"
+          aria-label="მოსაწვევის გახსნა"
+          data-aria-ka="მოსაწვევის გახსნა"
+          data-aria-ru="Открыть приглашение"
+        >
 
-    </article>
+          <span class="envelope-assembly">
 
-  </div>
+            <!-- 1. CLOSED ENVELOPE -->
 
-</section>
+            <img
+              class="envelope-layer envelope-closed"
+              src="assets/closed-envelope.png"
+              alt=""
+              aria-hidden="true"
+            >
+
+            <!-- 2. OPENED ENVELOPE -->
+
+            <img
+              class="envelope-layer envelope-opened"
+              src="assets/opened-envelope.png"
+              alt=""
+              aria-hidden="true"
+            >
+
+            <!-- 3. FLOWERS THAT RISE FROM INSIDE -->
+
+            <img
+              class="envelope-layer envelope-flowers"
+              src="assets/flowers.png"
+              alt=""
+              aria-hidden="true"
+            >
+
+            <!-- MONOGRAM — VISIBLE ONLY WHEN CLOSED -->
+
+            <span
+              class="envelope-monogram"
+              aria-hidden="true"
+            >
+              D | K
+            </span>
+
+          </span>
+
+        </button>
+
+        <!-- SIDE FLOWER -->
+
+        <img
+          class="opening-side-flower"
+          src="assets/white-lily.png"
+          alt=""
+          aria-hidden="true"
+        >
+
+        <p
+          class="tap-copy"
+          data-ka="დააჭირეთ კონვერტს გასახსნელად"
+          data-ru="НАЖМИТЕ НА КОНВЕРТ, ЧТОБЫ ОТКРЫТЬ"
+        >
+          daaWireT konverts gasaxsnelad
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
 
   <!-- =========================================
        MAIN WEBSITE
@@ -228,10 +223,11 @@
           data-ka="გიწვევთ ჩვენს ქორწილში"
           data-ru="ПРИГЛАШАЕМ НА СВАДЬБУ"
         >
-          გიწვევთ ჩვენს ქორწილში
+          დააჭირეთ კონვერტს გასახსნელად
+
         </span>
 
-          <span>02.09.2026</span>
+        <span>02.09.2026</span>
 
       </div>
 
@@ -293,11 +289,11 @@
 
           <p
             class="invitation-kicker"
-            data-ka="გიწვევთ<br>ჩვენს ქორწილში"
+            data-ka="გიწვევთ <br> ჩვენს ქორწილში"
             data-ru="ПРИГЛАШАЕМ<br>ВАС НА СВАДЬБУ"
           >
-            გიწვევთ<br>
-            ჩვენს ქორწილში
+            giwvevT<br>
+            Cvens qorwilSi
           </p>
 
           <h2 class="invitation-names">
@@ -306,21 +302,21 @@
               data-ka="daviTi"
               data-ru="Давид"
             >
-              დავითი
+              daviTi
             </span>
 
             <small
               data-ka="და"
               data-ru="и"
             >
-              და
+              da
             </small>
 
             <span
               data-ka="qeTo"
               data-ru="Кето"
             >
-              ქეთო
+              qeTo
             </span>
 
           </h2>
@@ -330,7 +326,7 @@
             data-ka="2 სექტემბერი 2026"
             data-ru="2 СЕНТЯБРЯ 2026"
           >
-            2 სექტემბერი 2026
+            2 seqtemberi 2026
           </strong>
 
           <span
@@ -338,9 +334,9 @@
             data-ka="ბედნიერები ვიქნებით,<br>თუ ამ განსაკუთრებულ დღეს<br>ჩვენთან ერთად გაატარებთ"
             data-ru="БУДЕМ СЧАСТЛИВЫ<br>РАЗДЕЛИТЬ С ВАМИ<br>ЭТОТ ДЕНЬ!"
           >
-            ბედნიერები ვიქნებით,<br>
-            თუ ამ განსაკუთრებულ დღეს<br>
-            ჩვენთან ერთად გაატარებთ
+            bednierebi viqnebiT,<br>
+            Tu am gansakuTrebul dRes<br>
+            CvenTan erTad gaatarebT
           </span>
 
         </div>
@@ -371,7 +367,7 @@
             data-ka="ქორწილის დეტალები"
             data-ru="ДЕТАЛИ СВАДЬБЫ"
           >
-            ქორწილის დეტალები
+            qorwilis detalebi
           </p>
 
           <button
@@ -380,7 +376,7 @@
             data-ka="დააჭირეთ აქ"
             data-ru="НАЖМИТЕ СЮДА"
           >
-            დააჭირეთ აქ
+            daaWireT aq
           </button>
 
         </div>
@@ -427,17 +423,17 @@
             data-ka="სტუმრის ანკეტა"
             data-ru="АНКЕТА ГОСТЯ"
           >
-            სტუმრის ანკეტა
+            stumris anketa
           </p>
 
           <span
             class="note-copy"
             data-ka="გთხოვთ, დაადასტუროთ თქვენი დასწრება<br><u>10.08.2026-მდე</u>"
-            data-ru="ПОЖАЛУЙСТА, ПОДТВЕРДИТЕ<br>СВОЁ ПРИСУТСТВИЕ<br><u>ДО 10.08.2026</u>"
+            data-ru="ПОЖАЛУЙСТА, ПОДТВЕРДИТЕ СВОЁ ПРИСУТСТВИЕ<br><u>ДО 10.08.2026</u>"
           >
-            გთხოვთ, დაადასტუროთ<br>
-            თქვენი დასწრება<br>
-            <u>10.08.2026-მდე</u>
+            gTxovT, daadasturoT<br>
+            Tqveni daswreba<br>
+            <u>10.08.2026-mde</u>
           </span>
 
           <button
@@ -446,7 +442,7 @@
             data-ka="შეავსეთ ანკეტა"
             data-ru="ЗАПОЛНИТЬ АНКЕТУ"
           >
-            შეავსეთ ანკეტა
+            SeavseT anketa
           </button>
 
         </div>
@@ -469,7 +465,7 @@
         data-ka="ჩვენს შეხვედრამდე დარჩა"
         data-ru="ДО НАШЕЙ ВСТРЕЧИ ОСТАЛОСЬ"
       >
-        ჩვენს შეხვედრამდე დარჩა
+        Cvens Sexvedramde darCa
       </p>
 
       <div
@@ -487,7 +483,7 @@
             data-ka="დღე"
             data-ru="ДНЕЙ"
           >
-            დღე
+            dRe
           </span>
 
         </div>
@@ -502,7 +498,7 @@
             data-ka="საათი"
             data-ru="ЧАСОВ"
           >
-            საათი
+            saaTi
           </span>
 
         </div>
@@ -517,7 +513,7 @@
             data-ka="წუთი"
             data-ru="МИНУТ"
           >
-            წუთი
+            wuTi
           </span>
 
         </div>
@@ -532,7 +528,7 @@
             data-ka="წამი"
             data-ru="СЕКУНД"
           >
-            წამი
+            wami
           </span>
 
         </div>
@@ -541,17 +537,17 @@
 
       <p
         class="love"
-        data-ka=" სიყვარულით"
-        data-ru=" С ЛЮБОВЬЮ"
+        data-ka="სიყვარულით"
+        data-ru="С ЛЮБОВЬЮ"
       >
-         სიყვარულით
+        siyvaruliT
       </p>
 
       <h3
         data-ka="daviTi da qeTo"
-        data-ru="Давид и Кето "
+        data-ru="Давид и Кето"
       >
-        დავითი და ქეთო
+        daviTi da qeTo
       </h3>
 
       <div
@@ -559,7 +555,7 @@
         data-ka="საიტი შექმნილია INVITÉ-ს მიერ"
         data-ru="САЙТ РАЗРАБОТАН INVITÉ"
       >
-        საიტი შექმნილია INVITÉ-ს მიერ
+        saiti Seqmnilia INVITÉ-s mier
       </div>
 
     </section>
@@ -587,7 +583,7 @@
       data-ka="ქორწილის დეტალები"
       data-ru="ДЕТАЛИ СВАДЬБЫ"
     >
-      ქორწილის დეტალები
+      qorwilis detalebi
     </p>
 
     <h3
@@ -605,7 +601,7 @@
         data-ka="სტუმრების შეკრება"
         data-ru="Сбор гостей"
       >
-        სტუმრების შეკრება
+        stumrebis Sekreba
       </span>
 
     </div>
@@ -618,7 +614,7 @@
         data-ka="საქორწილო ცერემონია"
         data-ru="Свадебная церемония"
       >
-        საქორწილო ცერემონია
+        saqorwilo ceremonia
       </span>
 
     </div>
@@ -631,7 +627,7 @@
         data-ka="სადღესასწაულო ვახშამი"
         data-ru="Праздничный ужин"
       >
-        სადღესასწაულო ვახშამი
+        sadResaswaulo vaxSami
       </span>
 
     </div>
@@ -642,10 +638,8 @@
         data-ka="რესტორანი „ლისი მერე“"
         data-ru="Ресторан «Лиси Мере»"
       >
-        რესტორანი „ლისი მერე“
+        restorani „lisi mere“
       </p>
-
-     
 
     </div>
 
@@ -656,7 +650,7 @@
       data-ka="ლოკაციის გახსნა"
       data-ru="ОТКРЫТЬ КАРТУ"
     >
-      ლოკაციის გახსნა
+      lokaciis gaxsna
     </a>
 
   </dialog>
@@ -678,18 +672,13 @@
       ×
     </button>
 
-    <p
-      data-ka="სტუმრის ანკეტა"
-      data-ru="АНКЕТА ГОСТЯ"
-    >
-      სტუმრის ანკეტა
-    </p>
+  
 
     <h3
       data-ka="შემოგვიერთდებით?"
       data-ru="Будете ли вы с нами?"
     >
-      შემოგვიერთდებით?
+      SemogvierTdebiT?
     </h3>
 
     <form id="rsvpForm">
@@ -700,7 +689,7 @@
           data-ka="სახელი და გვარი"
           data-ru="ИМЯ И ФАМИЛИЯ"
         >
-          სახელი და გვარი
+          saxeli da gvari
         </span>
 
         <input
@@ -726,7 +715,7 @@
             data-ka="სიხარულით დავესწრები"
             data-ru="С радостью приду"
           >
-            სიხარულით დავესწრები
+            sixaruliT daveswrebi
           </span>
 
         </label>
@@ -743,7 +732,7 @@
             data-ka="ვერ დავესწრები"
             data-ru="Не смогу присутствовать"
           >
-            ვერ დავესწრები
+            ver daveswrebi
           </span>
 
         </label>
@@ -756,7 +745,7 @@
           data-ka="შეტყობინება"
           data-ru="СООБЩЕНИЕ"
         >
-          შეტყობინება
+          Setyobineba
         </span>
 
         <textarea
@@ -771,7 +760,7 @@
         data-ka="გაგზავნა"
         data-ru="ОТПРАВИТЬ"
       >
-        გაგზავნა
+        gagzavna
       </button>
 
       <p id="formStatus"></p>
@@ -780,7 +769,7 @@
 
   </dialog>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=8"></script>
 
 </body>
 </html>
